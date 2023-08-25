@@ -244,9 +244,9 @@ const UniversityPage = () => {
 
       <FileUpload /> {/* Include the updated FileUpload component here */}
       <div className="action-buttons">
-        <button className="action-button">SIGN FILES</button>
-        <button className="action-button">DOWNLOAD CSV</button>
-        <button className="action-button">BLOCKCHAIN</button>
+        <button className="action-button" onClick={handleSign}>SIGN FILES</button>
+        <button className="action-button" onClick={handleDownload}>DOWNLOAD CSV</button>
+        <button className="action-button" onClick={storeBlockchain}>BLOCKCHAIN</button>
       </div>
       </form>
     </div>

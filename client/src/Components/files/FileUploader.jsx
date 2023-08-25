@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./FileUploader.css";
 
-const FileUpload = () => {
+const FileUpload = ({func}) => {
   const [isDragging, setIsDragging] = useState(false);
   const [files, setFiles] = useState([]);
   const [uploadingFiles, setUploadingFiles] = useState([]);
@@ -28,7 +28,7 @@ const FileUpload = () => {
   };
 
   const handleFiles = (newFiles) => {
-    const validExtensions = ["image/jpeg", "image/jpg", "image/png"];
+    const validExtensions = ["image/jpeg", "image/jpg", "image/png", "application/pdf", "application/msword", "application/vnd.openxmlformats-officedocument.wordprocessingml.document"];
     const filteredFiles = newFiles.filter((file) =>
       validExtensions.includes(file.type)
     );
@@ -76,7 +76,7 @@ const FileUpload = () => {
           type="file"
           id="fileInput"
           hidden
-          onChange={handleFileInputChange}
+          onChange={func}
           multiple
         />
       </label>
